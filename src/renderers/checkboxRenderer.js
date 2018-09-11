@@ -312,6 +312,9 @@ function onChange(event, instance) {
 
   const row = parseInt(event.target.getAttribute('data-row'), 10);
   const col = parseInt(event.target.getAttribute('data-col'), 10);
+  if (!row && !col) {
+    return false;
+  }
   const cellProperties = instance.getCellMeta(row, col);
 
   if (!cellProperties.readOnly) {
